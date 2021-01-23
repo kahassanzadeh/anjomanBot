@@ -10,8 +10,8 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 
 logger = logging.getLogger(__name__)
 
-bot = telegram.Bot(token = '1472815090:AAERtN_sa3xL5oWPZEC_WIwt3FSmpKvzQcs')
-updater = Updater('1472815090:AAERtN_sa3xL5oWPZEC_WIwt3FSmpKvzQcs', use_context=True)
+bot = telegram.Bot(token = '-')
+updater = Updater('-', use_context=True)
 
 
 dp = updater.dispatcher
@@ -68,20 +68,25 @@ def echo(update, context):
        pass
    elif info[iD][1] == 6:
        if text == "1" or text == "۱":
-           message = "برای درس اصول تولید فلزات موارد پیشنهادی که بتوانید به عنوان تدریسیار در آن کمک کنید به صورت زیر است " + "\n" + "۱-برگزاری کلاس حل تمرین و تصحیح تکالیف" + "\n" +"۲-آموزش چهار ماژول اول نرم افزار HSC" + "\n" + "۳-تهیه تکلیف از HSCو تحویل پاسخ دانشجویان و راهنمایی برخط" + "\n" +"۴- جمع آوری فیلم ها و انیمیشن های مرتبط با استخراج و بازیابی فلزات از منابع مختلف" + "\n" + "۵-سایر موارد"
+           message = "برای درس اصول تولید فلزات موارد پیشنهادی که بتوانید به عنوان تدریسیار در آن کمک کنید به صورت زیر است " + "\n" + "۱-برگزاری کلاس حل تمرین و تصحیح تکالیف" + "\n" +"۲-آموزش چهار ماژول اول نرم افزار HSC" + "\n" + "۳-تهیه تکلیف از HSCو تحویل پاسخ دانشجویان و راهنمایی برخط" + "\n" +"۴- جمع آوری فیلم ها و انیمیشن های مرتبط با استخراج و بازیابی فلزات از منابع مختلف" + "\n" + "۵-سایر موارد"+"\n"+"برای انتخاب هر یک از گزینه ها تنها شماره‌ی آن مورد را بنویسید و برای سایر موارد تایپ کنید موضوع پیشنهادی خود را"
            bot.send_message(chat_id = iD,text = message)    
            pass
        elif text == "2" or text == "۲":
            message = "چه توانایی ها دارید که بتوانید به عنوان تدریسیار کمک کنید"
            bot.send_message(chat_id = iD,text = message)
        pass
+   
    elif info[iD][1] == 7:
        message = "علت و انگیزه‌ی شما برای تدریسیار شدن در این درس چیست؟"
        bot.send_message(chat_id = iD,text = message)
        pass
    
-   
    elif info[iD][1] == 8:
+       message = "برای بهبود کیفی درس اگر نظری دارید بیان کنید در صورتی که نظری ندارید عدد 0 را وارد کنید"
+       bot.send_message(chat_id = iD,text = message)
+       pass
+   
+   elif info[iD][1] == 9:
        message ="خیلی متشکر از توجه شما بررسی ها نسبت به درخواست شما انجام خواهد شد و در صورتی که انتخاب شدید با شما تماس گرفته می‌شود"
        bot.send_message(chat_id = iD,text = message)
        file = open("info.txt","a",encoding=('utf-8'))
